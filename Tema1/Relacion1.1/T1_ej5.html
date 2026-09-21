@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        var countdown = prompt("Introduce un número para iniciar la cuenta atras");
+        while (countdown > 0) {
+            alert(countdown+ "... ");
+            countdown--;
+        }
+
+        /* Cuando ponemos "countdown--" lo que hace es que va haciendo la cuenta atras hasta llegar al 0
+        pero cuando ponemos "countdown++" lo que hace es que entra en un bucle infinito porque va aumentando
+        el número y no paran de salir alerts asi que aunque reinicies la página va a seguir aumentando y no puedes
+        salir, solo si cierras la página.*/
+    </script>
+</body>
+</html>

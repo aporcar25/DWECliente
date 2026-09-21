@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        // Variable booleana para saber si es hora en punto u media hora
+        var esMediaHora = false;
+        
+        // Bucle for para ir hora por hora
+        for (var hora = 9; hora <= 21; hora++) {
+            // Para mostrar las horas en punto
+            document.write(hora + ":00<br>");
+
+            // Cambiamos el valor de la variable 
+            esMediaHora = !esMediaHora;
+
+            // Y aqui mostramos las medias horas
+            if (esMediaHora) {
+                document.write(hora + ":30<br>");
+                // La volvemos a dejar en false para la siguiente hora
+                esMediaHora = false;
+            }
+        }
+    </script>
+</body>
+</html> 

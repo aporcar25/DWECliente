@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+        // Variable para almacenar la respuesta correcta
+        var apellido = "";
+
+        // Bucle while para que se repita mientras la respuesta no sea "suarez" ni "suárez"
+        while (apellido !== "suarez" && apellido !== "suárez") {
+            // Le pedimos al usuario el apellido
+            apellido = prompt("Introduce el apellido del primer presidente español de la democracia: ");
+
+            // Si el usuario le da a Cancelar lo convertimos en una cadena vacía para que no falle y no deje acceder
+            if (apellido === null) {
+                apellido = "";
+            } else {
+                // Convertimos el texto a minúsculas por si se escribe la primera letra en mayúsculas
+                apellido = apellido.toLowerCase();
+            }
+        }
+        // Si sale del bucle es porque la respuesta es correcta
+        alert("Acceso concedido.");
+    </script>
+</body>
+</html>

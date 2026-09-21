@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice relación 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 20px;
+            color: #555555;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #2980b9;
+            transform: translateX(-3px);
+        }
+
+        h1 {
+            color: #1a252f;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 12px;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: #555555;
+            font-size: 1.05em;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 25px;
+        }
+
+        li {
+            background-color: #ffffff;
+            margin: 12px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            animation: fadeInUp 0.5s ease-out forwards;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        a.ejercicio-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1em;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
+        a.ejercicio-link:hover {
+            color: #16a085;
+            background-color: #f8fafc;
+        }
+
+        a.ejercicio-link::after {
+            content: "→";
+            font-size: 1.2em;
+            opacity: 0.4;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        a.ejercicio-link:hover::after {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Relación 1.1</h1>
+        <p>Ejercicios:</p>
+
+        <ul>
+            <li><a href="T1_ej1.html" target="_blank" class="ejercicio-link">Ejercicio 1</a></li>
+            <li><a href="T1_ej2.html" target="_blank" class="ejercicio-link">Ejercicio 2</a></li>
+            <li><a href="T1_ej3.html" target="_blank" class="ejercicio-link">Ejercicio 3</a></li>
+            <li><a href="T1_ej4.html" target="_blank" class="ejercicio-link">Ejercicio 4</a></li>
+            <li><a href="T1_ej5.html" target="_blank" class="ejercicio-link">Ejercicio 5</a></li>
+            <li><a href="T1_ej6.html" target="_blank" class="ejercicio-link">Ejercicio 6</a></li>
+            <li><a href="T1_ej7.html" target="_blank" class="ejercicio-link">Ejercicio 7</a></li>
+            <li><a href="T1_ej8.html" target="_blank" class="ejercicio-link">Ejercicio 8</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <script>
+        var mensajePrompt = "¿Cuál fue el primer presidente de la democracia española?";
+        var respuesta = "";
+
+        // Bucle while que sigue hasta encontrar un break
+        while (true) {
+
+            respuesta = prompt(mensajePrompt);
+
+            // Si el usuario le da a Cancelar lo convertimos en una cadena vacía para que no falle y no deje acceder
+            if (respuesta === null) {
+                respuesta = "";
+            }
+
+            // Con trim eliminamos los espacios que haya al principio y al final y lo convertmos a minúsculas
+            var textoLimpio = respuesta.trim().toLowerCase();
+
+            // Si el usuario escribe bien el nombre y apellido le deja acceder y rompe el bucle
+            if (textoLimpio === "adolfo suarez" || textoLimpio === "adolfo suárez") {
+                alert("¡Correcto! Acceso concedido");
+                break;
+                // Si escribe solo el nombre
+            } else if (textoLimpio === "adolfo") {
+                mensajePrompt = "Te falta el apellido. ¿Cuál fue el primer presidente de la democracia española?";
+                // Si escribe solo el apellido
+            } else if (textoLimpio === "suarez" || textoLimpio === "suárez") {
+                mensajePrompt = "Te falta el nombre. ¿Cuál fue el primer presidente de la democracia española?";
+                // Si escribe nombre y apellido mal
+            } else {
+                mensajePrompt = "ERROR. Inténtelo de nuevo. ¿Cuál fue el primer presidente de la democracia española?";
+            }
+        }
+    </script>
+</body>
+</html>
