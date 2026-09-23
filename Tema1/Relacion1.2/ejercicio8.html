@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <script>
+        var tamano = (prompt("Introduce la dimensión de las celdas en píxeles (ancho/alto):"));
+
+        var casillas = 8;
+        var anchoTotal = casillas * tamano;
+
+        document.write('<table border="1" cellspacing="0" width="' + anchoTotal + '">');
+
+        for (var fila = 1; fila <= casillas; fila++) {
+            document.write('<tr height="' + tamano + '">');
+
+            for (var col = 1; col <= casillas; col++) {
+                
+                if ((fila + col) % 2 === 0) {
+                    document.write('<td width="' + tamano + '" bgcolor="white">&nbsp;</td>');
+                } 
+                else {
+                    document.write('<td width="' + tamano + '" bgcolor="black">&nbsp;</td>');
+                }
+
+            }
+
+            document.write('</tr>');
+        }
+
+        document.write('</table>');
+    </script>
+</body>
+</html>

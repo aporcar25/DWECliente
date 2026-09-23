@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+        var numColumnas = (prompt("Introduce el número de columnas:"));
+        var numFilas = (prompt("Introduce el número de filas:"));
+        var alto = (prompt("Introduce el alto de las celdas (en píxeles):"));
+        var ancho = (prompt("Introduce el ancho de las celdas (en píxeles):"));
+
+        var anchoTotal = numColumnas * ancho;
+
+        document.write('<table border="1" cellspacing="0" width="' + anchoTotal + '">');
+
+        for (var f = 1; f <= numFilas; f++) {
+            document.write('<tr height="' + alto + '">');
+
+            for (var c = 1; c <= numColumnas; c++) {
+                document.write('<td width="' + ancho + '">&nbsp;</td>');
+            }
+
+            document.write('</tr>');
+        }
+
+        document.write('</table>');
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        var numeroSecreto = (prompt("Jugador 1: Introduce el número secreto:"));
+
+        var intento;
+
+        do {
+            intento = (prompt("Jugador 2: Intenta adivinar el número secreto:"));
+
+            if (intento < numeroSecreto) {
+                alert("El número secreto es MAYOR que " + intento);
+            } else if (intento > numeroSecreto) {
+                alert("El número secreto es MENOR que " + intento);
+            } else {
+                alert("¡CORRECTO! Has adivinado el número secreto.");
+            }
+
+        } while (intento !== numeroSecreto);
+    </script>
+</body>
+</html>
