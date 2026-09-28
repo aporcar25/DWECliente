@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        function squareAndSum(...numeros) {
+            let suma = 0;
+
+            for (let i = 0; i < numeros.length; i++) {
+                let cuadrado = numeros[i] * numeros[i];
+                suma += cuadrado;
+            }
+
+            return suma;
+        }
+
+        let prueba1 = squareAndSum(2, 4, 3);
+        let prueba2 = squareAndSum(1, 2);
+
+        document.write("squareAndSum(2, 4, 3): " + prueba1 + "<br>");
+        document.write("squareAndSum(1, 2): " + prueba2);
+    </script>
+</body>
+</html>

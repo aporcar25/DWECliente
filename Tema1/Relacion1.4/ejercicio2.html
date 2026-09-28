@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        function addOnlyNums(...argumentos) {
+            let suma = 0;
+
+            for (let i = 0; i < argumentos.length; i++) {
+                let elemento = argumentos[i];
+
+                if (typeof elemento === "number" && !isNaN(elemento)) {
+                    suma += elemento;
+                }
+            }
+            return suma;
+        }
+
+        let resultadoEnunciado = addOnlyNums(1, 'cat', 3, 4);
+        document.write("Resultado de los argumentos del enunciado: " + resultadoEnunciado + "<br>");
+
+        let dato1 = Number(prompt("Introduce el primer número:"));
+        let dato2 = prompt("Introduce un texto cualquiera (ejemplo: 'gato'):");
+        let dato3 = Number(prompt("Introduce otro número:"));
+
+        let resultado = addOnlyNums(dato1, dato2, dato3);
+        document.write("Resultados con argumentos introducidos: " + resultado);
+    </script>
+</body>
+</html>

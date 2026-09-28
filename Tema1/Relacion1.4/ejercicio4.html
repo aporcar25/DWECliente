@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        function combineTwoArrays(array1, array2) {
+            let arrayCombinado = [];
+
+            for (let i = 0; i < array1.length; i++) {
+                arrayCombinado.push(array1[i]);
+            }
+
+            for (let j = 0; j < array2.length; j++) {
+                arrayCombinado.push(array2[j]);
+            }
+            return arrayCombinado;
+        }
+
+        let array1 = ["Hola"];
+        let array2 = ["mundo"];
+
+        let resultado = combineTwoArrays(array1, array2);
+        document.write("Resultado de los dos arrays combinados: " + resultado);
+    </script>   
+</body>
+</html>

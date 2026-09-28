@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        function onlyUniques(...argumentos) {
+            let unicos = [];
+
+            for (let i = 0; i < argumentos.length; i++) {
+                let elementoActual = argumentos[i];
+
+                if (!unicos.includes(elementoActual)) {
+                    unicos.push(elementoActual);
+                }
+            }
+
+            return unicos;
+        }
+
+        let prueba1 = onlyUniques('cat', 'cat', 'dog', 'pig');
+        let prueba2 = onlyUniques(1, 4, 7, 1, 2, 7, 4);
+        
+        /* Método para que los argumentos se pongan directamente en un array sin tener que hacer otra función
+           para mostrarlo en forma de array*/
+        document.write("Prueba 1: " + JSON.stringify(prueba1) + "<br>");
+        document.write("Prueba 2: " + JSON.stringify(prueba2));
+    </script>
+</body>
+</html>

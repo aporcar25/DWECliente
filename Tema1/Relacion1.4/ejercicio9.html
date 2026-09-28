@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <script>
+        function tieneTresDigitos(numero) {
+            let numeroAbsoluto = Math.abs(numero);
+
+            if (numeroAbsoluto >= 100 && numeroAbsoluto <= 999) {
+                return "Sí";
+            } else {
+                return "No";
+            }
+        }
+
+        let numero1 = tieneTresDigitos(123);
+        let numero2 = tieneTresDigitos(45);
+        let numero3 = tieneTresDigitos(1000);
+
+        document.write("¿123 tiene 3 dígitos?: " + numero1 + "<br>");
+        document.write("¿45 tiene 3 dígitos?: " + numero2 + "<br>");
+        document.write("¿1000 tiene 3 dígitos?: " + numero3 + "<br>");
+    </script>
+</body>
+</html>

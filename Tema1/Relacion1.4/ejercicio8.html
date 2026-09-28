@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <script>
+        function rango(valor, rangoInf, rangoSup) {
+             if (valor >= rangoInf && valor <= rangoSup) {
+                return "El número " + valor + " sí está dentro del rango [" + rangoInf + ", " + rangoSup + "].";
+            } else {
+                return "El número " + valor + " no está dentro del rango [" + rangoInf + ", " + rangoSup + "].";
+            }
+        }
+
+        let numero = prompt("Introduce el número a comprobar:");
+        let inferior = prompt("Introduce el límite inferior del rango:");
+        let superior = prompt("Introduce el límite superior del rango:");
+
+        let resultado = rango(numero, inferior, superior);
+
+        document.write("Resultado: " + resultado);
+    </script>
+</body>
+</html>

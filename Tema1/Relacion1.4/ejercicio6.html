@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+        function divisible(numero) {
+            if (numero % 3 === 0) {
+                return "Sí, el número " + numero + " es divisible por 3.";
+            } else {
+                return "No, el número " + numero + " no es divisible por 3.";
+            }
+        }
+
+        let numero = prompt("Introduce un número para comprobar si es divisible por 3: ");
+        let resultado = divisible(numero);
+        document.write("Resultado: " + resultado);
+    </script>
+</body>
+</html>

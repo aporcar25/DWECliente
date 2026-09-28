@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <script>
+        function areaRectangulo(lado1, lado2) {
+            let area = lado1 * lado2;
+            return area;
+        }
+
+        let base = prompt("Introduce la base o primer lado del rectángulo: ");
+        let altura = prompt("Introduce la altura o segundo lado del rectángulo: ");
+
+        let resultado = areaRectangulo(base, altura);
+
+        document.write("El rectángulo de lados <b>" + base + "</b> y <b>" + altura + "</b> tiene un área de: <b>" + resultado + "</b>");
+
+    </script>
+</body>
+</html>

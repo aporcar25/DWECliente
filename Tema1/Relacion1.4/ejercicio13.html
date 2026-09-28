@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <script>
+        function factorial(numero) {
+            if (numero === 0 || numero === 1) {
+                return 1;
+            }
+
+            let resultado = 1;
+
+            for (let i = 2; i <= numero; i++) {
+                resultado *= i;
+            }
+            return resultado;
+        }
+
+        let num = prompt("Introduce un número entero para calcular su factorial:");
+        let total = factorial(num);
+
+        document.write("El factorial de <b>" + num + "!</b> es: <b>" + total + "</b>");
+    </script>
+</body>
+</html>

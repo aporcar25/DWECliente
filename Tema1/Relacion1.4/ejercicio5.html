@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        function sumEveryOther(...numeros) {
+            let suma = 0;
+
+            for (let i = 0; i < numeros.length; i += 2) {
+                suma += numeros[i];
+            }
+            return suma;
+        }
+
+        let resultado1 = sumEveryOther(5, 6, 3, 4, 1);
+        let resultado2 = sumEveryOther(10, 2 ,11);
+
+        document.write("Prueba 1: " + resultado1 + "<br>");
+        document.write("Prueba 2: " + resultado2);
+    </script>
+</body>
+</html>

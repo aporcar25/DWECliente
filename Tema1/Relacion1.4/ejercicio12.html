@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 12</title>
+</head>
+<body>
+    <script>
+        function precioFinal(precioOriginal, descuento) {
+            let rebaja = precioOriginal * (descuento / 100);
+            let resultado = precioOriginal - rebaja;
+            return resultado;
+        }
+
+        var precio = prompt("Introduce el precio original del producto: ");
+        var porcentaje = prompt("Introduce el porcentaje de descuento: ");
+
+        var total = precioFinal(precio, porcentaje);
+
+        document.write("Precio original: <b>" + precio + "€</b><br>");
+        document.write("Descuento aplicado: <b>" + porcentaje + "%</b><br>");
+        document.write("Precio final con descuento: <b>" + total + "€</b>");
+    </script>
+</body>
+</html>

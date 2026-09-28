@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <script>
+        function imc(peso, altura) {
+            let resultadoIMC = peso / (altura * altura);
+            return resultadoIMC;
+        }
+
+        let pesoUsuario = prompt("Introduce tu peso en kilogramos: ");
+        let alturaUsuario = prompt("Introduce tu altura en metros: ");
+
+        let resultado = imc(pesoUsuario, alturaUsuario);
+
+        document.write("Para un peso de <b>" + pesoUsuario + " kg</b> y una altura de <b>" + alturaUsuario + " m</b>:<br>");
+        document.write("Tu IMC es: <b>" + resultado + "</b>");
+    </script>
+</body>
+</html>
