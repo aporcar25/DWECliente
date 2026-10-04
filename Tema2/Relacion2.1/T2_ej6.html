@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+        let nombreCompleto = prompt("Introduce tu nombre y apellidos: ");
+
+        if (nombreCompleto) {
+            let contadorLetras = 0;
+            for (let i = 0; i < nombreCompleto.length; i++) {
+                if (nombreCompleto.charAt(i) !== " ") {
+                    contadorLetras++;
+                }
+            }
+
+            console.log("1. Tamaño total (sin espacios): " + contadorLetras + " caracteres.");
+            console.log("   Tamaño total (con espacios incluidos): " + nombreCompleto.length + " caracteres.");
+
+            console.log("2. En minúsculas: " + nombreCompleto.toLowerCase());
+            console.log("   En mayúsculas: " + nombreCompleto.toUpperCase());
+
+            let primerEspacio = nombreCompleto.indexOf(" ");
+            let ultimoEspacio = nombreCompleto.lastIndexOf(" ");
+
+            let nombre = nombreCompleto.substring(0, primerEspacio);
+            let apellido1 = nombreCompleto.substring(primerEspacio + 1, ultimoEspacio);
+            let apellido2 = nombreCompleto.substring(ultimoEspacio + 1);
+
+            console.log("3. En 3 líneas:");
+            console.log("   Nombre: " + nombre);
+            console.log("   Apellido 1: " + apellido1);
+            console.log("   Apellido 2: " + apellido2);
+        }
+
+    </script>
+</body>
+</html>

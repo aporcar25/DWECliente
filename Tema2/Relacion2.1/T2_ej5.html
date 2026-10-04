@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        let menu = "Introduce una opción:\n" + 
+                    "1. Potencia\n" +
+                    "2. Raíz\n" +
+                    "3. Redondeo\n" +
+                    "4. Trigonometría";
+
+        let opcion = Number(prompt(menu));
+
+        switch (opcion) {
+            case 1:
+                let base = prompt("Introduce la base (X): ");
+                let exponente = prompt("Introduce el exponente (Y): ");
+                let potencia = Math.pow(base, exponente);
+
+                document.write("La potencia de " + base + " elevado a " + exponente + " es: " + potencia);
+                break;
+
+            case 2:
+                let numeroRaiz = prompt("Introduce un número no negativo: ");
+
+                if (numeroRaiz < 0) {
+                    document.write("Error: El número introducido no puede ser negativo.");
+                } else {
+                    let raiz = Math.sqrt(numeroRaiz);
+                    document.write("La raíz de " + numeroRaiz + " es: " + raiz);
+                }
+                break; 
+
+            case 3:
+                let decimal = prompt("Introduce un número decimal: ");
+
+                let enteroCercano = Math.round(decimal);
+                let alza = Math.ceil(decimal);
+                let baja = Math.floor(decimal);
+
+                document.write("El redondeo al entero más próximo es: " + enteroCercano + "<br>");
+                document.write("El redondeo al alza es: " + alza + "<br>");
+                document.write("El redondeo a la baja es: " + baja);
+                break;
+
+            case 4:
+                let anguloGrados = prompt("Introduce un ángulo (entre 0º y 360º):");
+
+                let radianes = anguloGrados * (Math.PI / 180);
+
+                let seno = Math.sin(radianes);
+                let coseno = Math.cos(radianes);
+                let tangente = Math.tan(radianes);
+
+                document.write("Para el ángulo de " + anguloGrados + "º:<br>");
+                document.write("Seno: " + seno + "<br>");
+                document.write("Coseno: " + coseno + "<br>");
+                document.write("Tangente: " + tangente);
+                break;
+
+            default: 
+                document.write("Opción no válida. Debes introducir un número del 1 al 4.");
+                break;
+        }
+    </script>
+</body>
+</html>

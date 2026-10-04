@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        let hoy = new Date();
+        let anyoActual = hoy.getFullYear();
+        let navidad = new Date(anyoActual, 11, 19);
+
+        
+        let diferenciaMilisegundos = navidad - hoy;
+        let diasRestantes = Math.round(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
+
+        document.write("Días que quedan para las vacaciones de Navidad (19 de diciembre): " + diasRestantes + " días.");
+    </script>
+</body>
+</html>

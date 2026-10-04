@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <script>
+        let frase = prompt("Introduce una frase:");
+
+        if (frase) {
+            let fraseMinusculas = frase.toLowerCase();
+
+            let cantA = 0;
+            let cantE = 0;
+            let cantI = 0;
+            let cantO = 0;
+            let cantU = 0;
+
+            for (let i = 0; i < fraseMinusculas.length; i++) {
+                let caracter = fraseMinusculas.charAt(i);
+
+                if (caracter === 'a' || caracter === 'á') {
+                    cantA++;
+                } else if (caracter === 'e' || caracter === 'é') {
+                    cantE++;
+                } else if (caracter === 'i' || caracter === 'í') {
+                    cantI++;
+                } else if (caracter === 'o' || caracter === 'ó') {
+                    cantO++;
+                } else if (caracter === 'u' || caracter === 'ú') {
+                    cantU++;
+                }
+            }
+
+            document.write("Frase introducida: \"" + frase + "\"<br><br>");
+            document.write("Apariciones de cada vocal:<br>");
+            document.write("Vocal A: " + cantA + "<br>");
+            document.write("Vocal E: " + cantE + "<br>");
+            document.write("Vocal I: " + cantI + "<br>");
+            document.write("Vocal O: " + cantO + "<br>");
+            document.write("Vocal U: " + cantU);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <script>
+        let frase = prompt("Introduce una frase:");
+
+        if (frase) {
+            let fraseMinusculas = frase.toLowerCase();
+            let contador = 0;
+
+            for (let i = 0; i < fraseMinusculas.length; i++) {
+                if (fraseMinusculas.charAt(i) === 'a') {
+                    contador++;
+                }
+            }
+
+            document.write("Frase introducida: \"" + frase + "\"<br>");
+            document.write("La letra 'a' aparece " + contador + " veces.");
+        }
+    </script>
+</body>
+</html>

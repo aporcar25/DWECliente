@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script>
+        let horaActual = new Date();
+
+        let horas = horaActual.getHours();
+        let minutos = horaActual.getMinutes();
+        let segundos = horaActual.getSeconds();
+
+        let horasFormateadas = horas < 10 ? "0" + horas : horas;
+        let minutosFormateados = minutos < 10 ? "0" + minutos : minutos;
+        let segundosFormateados = segundos < 10 ? "0" + segundos : segundos;
+
+        let formato1 = horasFormateadas + ":" + minutosFormateados + ":" + segundosFormateados;
+        let formato2 = "Son las " + horasFormateadas + "h y " + minutosFormateados + "m";
+
+        document.write("1. " + formato1 + " (hora detallada con minutos y segundos)<br>");
+        document.write("2. " + formato2);
+    </script>
+</body>
+</html>

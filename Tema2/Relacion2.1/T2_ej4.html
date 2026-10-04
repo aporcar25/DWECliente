@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        let inicio = new Date();
+
+        let nombre = prompt("Introduce tu nombre: ");
+        let apellido1 = prompt("Introduce tu primer apellido: ");
+        let apellido2 = prompt("Introduce tu segundo apellido: ");
+
+        let fin = new Date();
+
+        let tiempoMilisegundos = fin - inicio;
+        let tiempoSegundos = Math.round(tiempoMilisegundos / 1000);
+
+        let nombreCompleto = nombre + " " + apellido1 + " " + apellido2;
+
+        document.write("En introducir " + nombreCompleto + " has tardado " + tiempoSegundos + " segundos.")
+    </script>
+</body>
+</html>

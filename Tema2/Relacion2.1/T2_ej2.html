@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        let entrada = prompt("Introduce tu fecha de cumpleaños (YYYY-MM-DD): ");
+
+        if (entrada) {
+            let anioOriginal = entrada.substring(0, 4);
+            let mesOriginal = entrada.substring(5, 7) - 1;
+            let diaOriginal = entrada.substring(8, 10);
+
+            let anioActual = new Date().getFullYear();
+
+            console.log("--- Años en los que tu cumpleaños cae en domingo hasta el año 2100 ---");
+
+            for (let anio = anioActual; anio <= 2100; anio++) {
+                let fechaCumple = new Date(anio, mesOriginal, diaOriginal);
+
+                if (fechaCumple.getDay() === 0) {
+                    console.log("En el año " + anio + " tu cumpleaños cae en domingo.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

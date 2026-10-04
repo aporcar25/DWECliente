@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <script>
+        let textoOriginal = prompt("Introduce una frase o texto:");
+
+        if (textoOriginal) {
+            let textoInvertido = "";
+
+            for (let i = textoOriginal.length - 1; i >= 0; i--) {
+                textoInvertido += textoOriginal.charAt(i);
+            }
+
+            document.write("Texto original: \"" + textoOriginal + "\"<br>");
+            document.write("Texto invertido: \"" + textoInvertido + "\"");
+        }
+    </script>
+</body>
+</html>
