@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <script src="funciones_strings.js"></script>
+</head>
+<body>
+    
+    <h2>Ejercicio 9 - Validación de Tarjeta de Crédito</h2>
+
+    <script>
+        // Tarjetas válidas
+        let t1 = "9999777788880000";
+        let t2 = "6666666666661666";
+
+        // Tarjetas inválidas
+        let t3 = "a92332119c011112"; // Caracteres inválidos
+        let t4 = "4444444444444444"; // Sólo un tipo de número
+        let t5 = "1111111111111110"; // Suma menor a 16
+        let t6 = "6666666666666661"; // Último número impar
+
+        document.write("<b>" + t1 + ":</b> " + validateCreditCard(t1) + "<br>");
+        document.write("<b>" + t2 + ":</b> " + validateCreditCard(t2) + "<br>");
+        document.write("<b>" + t3 + ":</b> " + validateCreditCard(t3) + "<br>");
+        document.write("<b>" + t4 + ":</b> " + validateCreditCard(t4) + "<br>");
+        document.write("<b>" + t5 + ":</b> " + validateCreditCard(t5) + "<br>");
+        document.write("<b>" + t6 + ":</b> " + validateCreditCard(t6) + "<br>");
+    </script>
+</body>
+</html>
