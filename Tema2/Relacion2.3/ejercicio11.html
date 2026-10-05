@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+    <script src="funciones_strings.js"></script>
+</head>
+<body>
+
+    <h2>Ejercicio 11 - Validación de tarjeta con algoritmo de Luhn</h2>
+
+    <script>
+        let t1 = "49927398716";       // Válida por Luhn
+        let t2 = "49927398717";       // Inválida por Luhn
+        let t3 = "79927398713";       // Válida por Luhn
+        let t4 = "1234-5678-1234-5670"; // Inválida por Luhn
+
+        document.write("<b>" + t1 + ":</b> " + luhnAlgorithm(t1) + "<br>");
+        document.write("<b>" + t2 + ":</b> " + luhnAlgorithm(t2) + "<br>");
+        document.write("<b>" + t3 + ":</b> " + luhnAlgorithm(t3) + "<br>");
+        document.write("<b>" + t4 + ":</b> " + luhnAlgorithm(t4) + "<br>");
+    </script>
+</body>
+</html>
