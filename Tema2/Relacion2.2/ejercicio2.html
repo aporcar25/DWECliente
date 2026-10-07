@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h3 id="reloj">00:00:00</h3>
+    <script>
+        let reloj = setInterval(() => {
+            let fechaActual = new Date();
+            let horas = fechaActual.getHours();
+            let minutos = fechaActual.getMinutes();
+            let segundos = fechaActual.getSeconds();
+
+            if (horas < 10) {
+                horas = "0" + horas;
+            }
+
+            if (minutos < 10) {
+                minutos = "0" + minutos;
+            }
+
+            if (segundos < 10) {
+                segundos = "0" + segundos;
+            }
+
+            let horaFormateada = horas + ":" + minutos + ":" + segundos;
+            document.getElementById("reloj").innerHTML = horaFormateada;
+
+        }, 1000);
+    </script>
+</body>
+</html>
