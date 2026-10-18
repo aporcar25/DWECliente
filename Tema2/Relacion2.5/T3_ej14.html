@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    
+    <h3 id="textoClic">Haz clic aquí</h3>
+
+    <script>
+        let texto = document.getElementById("textoClic");
+
+        texto.onclick = () => {
+            for (let i = 1; i <= 5; i++) {
+                let posicionX = i * 40;
+                let posicionY = i * 40;
+
+                let ventanaEmergente = window.open("", "", "width=350,height=350,left=" + posicionX + ",top=" + posicionY);
+                ventanaEmergente.document.title = "Ventana " + i;
+                ventanaEmergente.document.body.innerHTML = "<h2>ventana " + i + "</h2><button onclick='window.close()'>Cerrar</button>";
+            }
+        };
+    </script>
+</body>
+</html>

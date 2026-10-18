@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Geolocalización</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        #mapa {
+            width: 100%;
+            height: 450px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+        }
+        body {
+            font-family: Arial,sans-serif;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="btnLocalizar" style="padding: 10px 15px; font-size: 16px; cursor: pointer;">Mostrar mi ubicación</button>
+    
+    <div id="estado" style="margin-top: 10px; font-weight: bold; color: #333;"></div>
+
+    <div id="mapa"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        let map = null;
+
+        document.getElementById("btnLocalizar").onclick = function() {
+            let estadoDiv = document.getElementById("estado");
+
+            if ("geolocation" in navigator) {
+                estadoDiv.textContent = "Obteniendo tu ubicación actual...";
+
+                navigator.geolocation.getCurrentPosition(
+                    
+                    function(position) {
+                        let lat = position.coords.latitude;
+                        let lon = position.coords.longitude;
+
+                        estadoDiv.textContent = `¡Ubicación encontrada! Latitud: ${lat.toFixed(4)}, Longitud: ${lon.toFixed(4)}`;
+                        if (map !== null) {
+                            map.remove(); 
+                        }
+
+                        map = L.map('mapa').setView([lat, lon], 15);
+
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            maxZoom: 19,
+                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                        }).addTo(map);
+
+                        L.marker([lat, lon]).addTo(map)
+                            .bindPopup("<b>¡Estás aquí!</b><br>Esta es tu posición aproximada.")
+                            .openPopup();
+                    },
+                );
+
+            } else {
+                estadoDiv.textContent = "Tu navegador no soporta geolocalización.";
+            }
+        };
+    </script>
+</body>
+</html>

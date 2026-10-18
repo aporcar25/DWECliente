@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+
+    <button id="botonEjecutar">Ejecutar cálculo aleatorio</button>
+
+    <div id="resultado">Haz clic en el botón para ver los resultados.</div>
+
+    <script>
+        document.getElementById("botonEjecutar").onclick = function() {
+            let aleatorio1 = Math.random();
+            let aleatorio2 = Math.random() * 100 + 100;
+
+            let min = parseFloat(prompt("Introduce el valor mínimo:"));
+            let max = parseFloat(prompt("Introduce el valor máximo:"));
+
+            let aleatorioUsuario = Math.random() * (max - min) + min;
+
+            document.getElementById("resultado").innerHTML = `
+                <b>Resultados obtenidos:</b><br>
+                - Número aleatorio entre 0 y 1: ${aleatorio1}<br>
+                - Número aleatorio entre 100 y 200: ${aleatorio2.toFixed(2)}<br>
+                - Número aleatorio entre ${min} y ${max}: ${aleatorioUsuario.toFixed(2)}
+            `;
+        }
+    </script>
+</body>
+</html>

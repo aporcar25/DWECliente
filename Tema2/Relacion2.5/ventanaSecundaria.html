@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana secundaria</title>
+</head>
+<body>
+    <p id="parrafo"></p>
+    <script>
+        // Función para recibir el texto desde la ventana principal y mostrarlo en el párrafo
+        function recibeMensaje(texto) {
+            //  Obtenemos el elemento 'p' del DOM mediante su id usando let
+            let objeto = document.getElementById("parrafo");
+            // Asignamos el texto recibido a la propiedad innerHTML del elemento
+            objeto.innerHTML = texto;
+        }
+
+        // Función encargada de cerrar esta ventana
+        function cerrarse() {
+            // Invocamos el método close del objeto window
+            window.close();
+        }
+    </script>
+
+    <!-- Botón para cerrar la ventana ejecutando la función cerrarse() -->
+    <button onclick="cerrarse()">cerrar</button>
+</body>
+</html>

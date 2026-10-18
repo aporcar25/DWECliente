@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+
+    <button id="botonEjecutar">Generar Tabla de Senos</button>
+
+    <div id="resultado">Haz clic en el botón para generar la tabla.</div>
+
+    <script>
+        document.getElementById("botonEjecutar").onclick = function() {
+            let tablaHTML = `
+                <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; text-align: center; font-family: sans-serif;">
+                    <thead>
+                        <tr style="background-color: #f2f2f2;">
+                            <th>Número (Grados)</th>
+                            <th>Valor del Seno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            for (let i = 1; i <= 10; i++) {
+                
+                let radianes = i * (Math.PI / 180);
+                let seno = Math.sin(radianes);
+
+                tablaHTML += `
+                    <tr>
+                        <td>${i}°</td>
+                        <td>${seno.toFixed(4)}</td>
+                    </tr>
+                `;
+            }
+
+            tablaHTML += `
+                    </tbody>
+                </table>
+            `;
+
+            document.getElementById("resultado").innerHTML = tablaHTML;
+        };
+    </script>
+</body>
+</html>

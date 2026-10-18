@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+
+    <button id="botonAbrir">Abrir ventana secundaria</button>
+    <button id="botonCerrar">Cerrar ventana secundaria</button>
+
+    <script>
+        let ventana = null;
+
+        let botonAbrir = document.getElementById("botonAbrir");
+        let botonCerrar = document.getElementById("botonCerrar");
+
+        botonAbrir.onclick = () => {
+            ventana = window.open("", "", "width=300,height=200");
+            ventana.document.body.innerHTML = "<h3>Ventana Secundaria</h3><button onclick='window.close()'>Cerrar ventana</button>";
+        };
+
+        botonCerrar.onclick = () => {
+            if (ventana && !ventana.closed) {
+                ventana.close();
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+    <ul>
+        <li><a href="#" id="enlaceA">a. Mostrar número de anclas</a></li>
+        <li><a href="#" id="enlaceB">b. Mostrar texto del primer ancla</a></li>
+        <li><a href="#" id="enlaceC">c. Mostrar número de imágenes</a></li>
+        <li><a href="#" id="enlaceD">d. Mostrar el ID de la primera imagen</a></li>
+        <li><a href="#" id="enlaceE">e. Mostrar número de enlaces</a></li>
+        <li><a href="#" id="enlaceF">f. Cambiar el título del documento</a></li>
+    </ul>
+
+    <div id="resultadoDocumento"></div>
+
+    <p><b>Anclas:</b></p>
+    <ul>
+        <li><a name="ancla1">Texto del Primer Ancla</a></li>
+        <li><a name="ancla2">Texto del Segundo Ancla</a></li>
+    </ul>
+
+    <p><b>Enlaces:</b></p>
+    <ul>
+        <li><a href="https://www.google.com" target="_blank">Enlace 1 (Google)</a></li>
+        <li><a href="https://github.com" target="_blank">Enlace 2 (GitHub)</a></li>
+    </ul>
+
+    <p><b>Imágenes:</b></p>
+    <div>
+        <img id="imagenGoogle" src="https://img2.rtve.es/n/1210020?w=1600" alt="Logo de Google" style="margin-right: 10px; border: 1px solid #999;">
+        <img id="imagenGithub" src="https://www.hackaboss.com/wp-content/uploads/elementor/thumbs/64e79ca5aff2fb7295bfddf9_github-que-es-re9uqd66a8o57yq0iibdzv2uz0ptpflu18v037snew.jpg" alt="Logo de Github" style="border: 1px solid #999;">
+    </div>
+
+    <script>
+        document.getElementById("enlaceA").onclick = () => {
+            mostrarNumeroAnclas("resultadoDocumento");
+        };
+        document.getElementById("enlaceB").onclick = () => {
+            mostrarTextoPrimerAncla("resultadoDocumento");
+        };
+        document.getElementById("enlaceC").onclick = () => {
+            mostrarNumeroImagenes("resultadoDocumento");
+        };
+        document.getElementById("enlaceD").onclick = () => {
+            mostrarIdPrimeraImagen("resultadoDocumento");
+        };
+        document.getElementById("enlaceE").onclick = () => {
+            mostrarNumeroEnlaces("resultadoDocumento");
+        };
+        document.getElementById("enlaceF").onclick = () => {
+            cambiarTituloDocumento();
+        };
+    </script>
+</body>
+</html>

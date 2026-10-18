@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+
+    <div id="resultado"></div>
+
+    <script>
+        window.onload = function() {
+        
+            const imagenesArr = [
+                "https://brandemia.org/sites/default/files/sites/default/files/logo_google_nuevo.jpg",
+                "https://www.hackaboss.com/wp-content/uploads/elementor/thumbs/64e79ca5aff2fb7295bfddf9_github-que-es-re9uqd66a8o57yq0iibdzv2uz0ptpflu18v037snew.jpg",
+                "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/960px-Unofficial_JavaScript_logo_2.svg.png?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+            ];
+
+            let indiceAleatorio = Math.floor(Math.random() * imagenesArr.length);
+            let rutaSeleccionada = imagenesArr[indiceAleatorio];
+            let etiquetaImagen = `<img src="${rutaSeleccionada}" alt="Imagen Aleatoria ${indiceAleatorio + 1}" style="max-width: 600px; height: auto; border: 5px solid #ccc; border-radius: 10px;">`;
+
+            document.getElementById("resultado").innerHTML = etiquetaImagen;
+        };
+    </script>
+</body>
+</html>

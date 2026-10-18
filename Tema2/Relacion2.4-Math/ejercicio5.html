@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+
+    <button id="botonEjecutar">Resolver ecuación</button>
+
+    <div id="resultado">Haz clic en el botón para introducir los coeficientes.</div>
+
+    <script>
+         document.getElementById("botonEjecutar").onclick = function() {
+            let a = parseFloat(prompt("Introduce el coeficiente a:"));
+            let b = parseFloat(prompt("Introduce el coeficiente b:"));
+            let c = parseFloat(prompt("Introduce el coeficiente c:"));
+
+            if (!isNaN(a) && !isNaN(b) && !isNaN(c) && a !== 0) {
+                let discriminante = Math.pow(b, 2) - (4 * a * c);
+                let mensaje = "";
+
+                if (discriminante > 0) {
+                    let x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+                    let x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+                    mensaje = `Dos soluciones reales:<br>- x1 = ${x1.toFixed(2)}<br>- x2 = ${x2.toFixed(2)}`;
+                
+                } else if (discriminante === 0) {
+                    let x = -b / (2 * a);
+                    mensaje = `Una solución real doble:<br>- x = ${x.toFixed(2)}`;
+                
+                } else {
+                    mensaje = "La ecuación no tiene soluciones reales (discriminante negativo).";
+                }
+
+                document.getElementById("resultado").innerHTML = `
+                    <b>Ecuación analizada:</b> ${a}x² + ${b}x + ${c} = 0<br><br>
+                    <b>Resultado:</b><br>${mensaje}
+                `;
+            } else {
+                document.getElementById("resultado").innerHTML = "Por favor, introduce valores numéricos válidos y asegúrate de que <b>'a' sea diferente de 0</b>.";
+            }
+         };
+    </script>
+</body>
+</html>

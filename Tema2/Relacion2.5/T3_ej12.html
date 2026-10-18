@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+
+    <button id="botonCerrar">Cerrar ventana secundaria</button>
+
+    <script>
+        let tituloUsuario = prompt("Escribe el título para la nueva ventana:");
+        let posicionIzquierda = window.screen.width - 500;
+        let ventanaSecundaria = window.open("", "", "width=500,height=400,left=" + posicionIzquierda + ",top=0");
+
+        ventanaSecundaria.document.write("<html><head><title>" + tituloUsuario + "</title></head><body>");
+        ventanaSecundaria.document.write("<h1>" + tituloUsuario + "</h1>");
+        ventanaSecundaria.document.write("</body></html>");
+
+        let botonCerrar = document.getElementById("botonCerrar");
+        botonCerrar.onclick = () => {
+            if (ventanaSecundaria && !ventanaSecundaria.closed) {
+                ventanaSecundaria.close();
+            }
+        };
+    </script>
+</body>
+</html>

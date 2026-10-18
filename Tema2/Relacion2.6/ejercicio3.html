@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+    <ul>
+        <li><a href="#" id="enlaceA">a. Ventana de confirmación</a></li>
+        <li><a href="#" id="enlaceB">b. Abrir ventana y analizar si se ha cerrado</a></li>
+        <li><a href="#" id="enlaceC">c. Abrir ventana y pedir nuevo nombre</a></li>
+        <li>
+            <a href="#" id="enlaceD1">d1. Cerrar ventana actual</a> |
+            <a href="#" id="enlaceD2">d2. Cerrar ventanaNueva</a>
+        </li>
+        <li><a href="#" id="enlaceF">f. Abre ventana de 300x100 (redimensionable)</a></li>
+        <li><a href="#" id="enlaceG">g. Escribir texto en la página padre desde la ventana</a></li>
+        <li><a href="#" id="enlaceH">h. Mover ventana 50px abajo y derecha</a></li>
+        <li><a href="#" id="enlaceI">i. Situar ventana en posición concreta</a></li>
+    </ul>
+
+    <p id="textoPadre"></p>
+
+    <script>
+        document.getElementById("enlaceA").onclick = () => { 
+            mostrarConfirmacion(); 
+        };
+        document.getElementById("enlaceB").onclick = () => {  
+            comprobarVentanaCerrada(); 
+        };
+        document.getElementById("enlaceC").onclick = () => { 
+            pedirNombreVentana(); 
+        };
+        document.getElementById("enlaceD1").onclick = () => { 
+            cerrarVentanaActual(); 
+        };
+        document.getElementById("enlaceD2").onclick = () => { 
+            cerrarVentanaSecundaria(); 
+        };
+        document.getElementById("enlaceF").onclick = () => { 
+            abrirVentanaRedimensionable(); 
+        };
+        document.getElementById("enlaceG").onclick = () => { 
+            escribirEnPaginaPadre("textoPadre"); 
+        };
+        document.getElementById("enlaceH").onclick = () => { 
+            moverVentanaRelativo(); 
+        };
+        document.getElementById("enlaceI").onclick = () => { 
+            moverVentanaAbsoluto(); 
+        };
+    </script>
+</body>
+</html>

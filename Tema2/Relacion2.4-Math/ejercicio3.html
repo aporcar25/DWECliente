@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+
+    <button id="botonEjecutar">Calcular hipotenusa</button>
+
+    <div id="resultado">Haz clic en el botón para introducir los catetos.</div>
+
+    <script>
+        document.getElementById("botonEjecutar").onclick = function() {
+            let cateto1 = parseFloat(prompt("Introduce el tamaño del primer cateto:"));
+            let cateto2 = parseFloat(prompt("Introduce el tamaño del segundo cateto:"));
+
+            if (!isNaN(cateto1) && !isNaN(cateto2) && cateto1 > 0 && cateto2 > 0) {
+                let hipotenusa = Math.hypot(cateto1, cateto2);
+
+                document.getElementById("resultado").innerHTML = `
+                    <b>Resultados del triángulo rectángulo:</b><br>
+                    - Cateto 1: ${cateto1}<br>
+                    - Cateto 2: ${cateto2}<br>
+                    - Hipotenusa: <b>${hipotenusa.toFixed(2)}</b>
+                `;
+            } else {
+                document.getElementById("resultado").innerHTML = "Por favor, introduce valores numéricos válidos mayores que cero.";
+            }
+        }
+    </script>
+</body>
+</html>

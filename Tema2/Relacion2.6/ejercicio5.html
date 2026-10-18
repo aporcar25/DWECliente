@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+    <script>
+        escribirDuranteCarga();
+    </script>
+
+    <ul>
+        <li><a href="#" id="enlaceA">a. Mostrar fecha de última actualización</a></li>
+        <li><a href="#" id="enlaceB">b. Mostrar URL de procedencia</a></li>
+        <li><a href="#" id="enlaceC">c. Mostrar el título del documento</a></li>
+        <li><a href="#" id="enlaceD">d. Mostrar la URL completa</a></li>
+        <li><a href="#" id="enlaceE">e. Ejemplo 2: Modificar tras la carga</a></li>
+    </ul>
+
+    <div id="resultadoDocumento"></div>
+
+    <script>
+        document.getElementById("enlaceA").onclick = () => { 
+            mostrarUltimaActualizacion("resultadoDocumento"); 
+        };
+        document.getElementById("enlaceB").onclick = () => {  
+            mostrarReferrer("resultadoDocumento"); 
+        };
+        document.getElementById("enlaceC").onclick = () => { 
+            mostrarTitulo("resultadoDocumento"); 
+        };
+        document.getElementById("enlaceD").onclick = () => { 
+            mostrarUrlDocumento("resultadoDocumento"); 
+        };
+        document.getElementById("enlaceE").onclick = () => { 
+            escribirDespues(); 
+        };
+    </script>
+</body>
+</html>

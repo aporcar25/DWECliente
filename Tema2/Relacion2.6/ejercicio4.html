@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+    <ul>
+        <li>
+            <a href="#marcadorEjemplo" id="enlaceA">a. Enlace para desplazarse al marcador</a>
+        </li>
+        <li>
+            <a href="#" id="enlaceB">b. Mostrar el nombre del host actual</a>
+        </li>
+        <li>
+            <a href="#" id="enlaceC">c. Mostrar la URL completa de la página</a>
+        </li>
+        <li>
+            <a href="#" id="enlaceD">d. Preguntar por una dirección web y navegar a ella</a>
+        </li>
+        <li>
+            <a href="#" id="enlaceE">e. Mostrar el protocolo utilizado</a>
+        </li>
+        <li>
+            <a href="#" id="enlaceF">f. Recargar la página actual</a>
+        </li>
+    </ul>
+
+    <!-- Contenedor donde se mostrarán los resultados de las funciones -->
+    <p id="resultadoLocation"></p>
+
+    <!-- Espacio adicional considerable para comprobar el desplazamiento al marcador (Apartado A) -->
+    <div style="height: 1000px;"></div>
+
+    <!-- Línea del marcador del Apartado A -->
+    <p>
+        <a href="#" id="marcadorEjemplo">Marcador del Apartado A (Haz clic aquí para ver su nombre)</a>
+    </p>
+    
+    <script>
+        
+        document.getElementById("marcadorEjemplo").onclick = function() {
+            mostrarNombreMarcador(this);
+        };
+
+        document.getElementById("enlaceB").onclick = () => {
+            mostrarHost("resultadoLocation");
+        };
+
+        document.getElementById("enlaceC").onclick = () => {;
+            mostrarUrlCompleta("resultadoLocation");
+        };
+
+        document.getElementById("enlaceD").onclick = () => {
+            navegarADireccion();
+        };
+
+        document.getElementById("enlaceE").onclick = () => {
+            mostrarProtocolo("resultadoLocation");
+        };
+
+        document.getElementById("enlaceF").onclick = (evento) => {
+            recargarPagina(evento);
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+
+    <button id="botonEjecutar">Calcular potencia</button>
+
+    <div id="resultado">Haz clic en el botón para introducir la base y el exponente.</div>
+
+    <script>
+         document.getElementById("botonEjecutar").onclick = function() {
+            let base = parseFloat(prompt("Introduce el número base:"));
+            let exponente = parseFloat(prompt("Introduce el exponente:"));
+
+            if (!isNaN(base) && !isNaN(exponente)) {
+                
+                let resultadoPotencia = Math.pow(base, exponente);
+
+                document.getElementById("resultado").innerHTML = `
+                    <b>Resultado del cálculo:</b><br>
+                    - Base: ${base}<br>
+                    - Exponente: ${exponente}<br>
+                    - ${base} elevado a ${exponente} es: <b>${resultadoPotencia}</b>
+                `;
+            } else {
+                document.getElementById("resultado").innerHTML = "Por favor, introduce valores numéricos válidos.";
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+
+    <button id="botonEjecutar">Calcular trigonometría</button>
+
+    <div id="resultado">Haz clic en el botón para introducir un ángulo.</div>
+
+    <script>
+        document.getElementById("botonEjecutar").onclick = function() {
+            let grados = parseFloat(prompt("Introduce un ángulo en grados:"));
+
+            if (!isNaN(grados)) {
+                let radianes = grados * (Math.PI / 180);
+                let seno = Math.sin(radianes);
+                let coseno = Math.cos(radianes);
+                let tangente = Math.tan(radianes);
+
+                document.getElementById("resultado").innerHTML = `
+                    <b>Resultados para el ángulo de ${grados}°:</b><br>
+                    - Seno: ${seno.toFixed(4)}<br>
+                    - Coseno: ${coseno.toFixed(4)}<br>
+                    - Tangente: ${tangente.toFixed(4)}
+                `;
+            } else {
+                document.getElementById("resultado").innerHTML = "Por favor, introduce un valor numérico válido.";
+            }
+        };
+    </script>
+</body>
+</html>

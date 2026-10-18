@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+
+    <button id="botonEjecutar">Iniciar cálculos continuos</button>
+
+    <div id="resultado">Haz clic en el botón para comenzar a calcular.</div>
+
+    <script>
+        document.getElementById("botonEjecutar").onclick = function() {
+            let historialHTML = "<b>Historial de cálculos:</b><ul>";
+            let continuar;
+
+            do {
+            let cateto1 = parseFloat(prompt("Introduce el tamaño del primer cateto:"));
+            let cateto2 = parseFloat(prompt("Introduce el tamaño del segundo cateto:"));
+
+            if (!isNaN(cateto1) && !isNaN(cateto2) && cateto1 > 0 && cateto2 > 0) {
+                let hipotenusa = Math.hypot(cateto1, cateto2);
+
+                historialHTML += `<li>Catetos (${cateto1}, ${cateto2}) -> Hipotenusa: <b>${hipotenusa.toFixed(2)}</b></li>`;
+            } else {
+               alert("Por favor, introduce valores numéricos válidos mayores que cero.");
+            }
+            continuar = confirm("¿Deseas realizar otro cálculo de hipotenusa?");
+        } while (continuar);
+        historialHTML += "</ul>";
+        document.getElementById("resultado").innerHTML = historialHTML;
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">Información de la Pantalla Cliente</h2>
+    <div id="contenedorTabla"></div>
+
+    <script>
+        const infoPantalla = {
+            "Ancho total (width)": screen.width + " px",
+            "Alto total (height)": screen.height + " px",
+            "Ancho disponible (availWidth)": screen.availWidth + " px",
+            "Alto disponible (availHeight)": screen.availHeight + " px",
+            "Profundidad de color (colorDepth)": screen.colorDepth + " bits",
+            "Resolución de color (pixelDepth)": screen.pixelDepth + " bits"
+        };
+
+        let htmlTabla = "<table>";
+        htmlTabla += "<thead><tr><th>Propidad de Pantalla</th><th>Valor</th></tr></head>";
+        htmlTabla += "<tbody>";
+        
+        for (let propiedad in infoPantalla) {
+            htmlTabla += "<tr>";
+            htmlTabla += "<td><b>" + propiedad + "</b></td>";
+            htmlTabla += "<td>" + infoPantalla[propiedad] + "</td>";
+            htmlTabla += "</tr>";
+        }
+
+        htmlTabla += "</tbody></table>";
+
+        let contenedor = document.getElementById("contenedorTabla");
+        contenedor.innerHTML = htmlTabla;
+    </script>
+</body>
+</html>
