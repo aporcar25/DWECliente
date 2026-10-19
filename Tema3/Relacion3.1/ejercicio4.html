@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+    <h1>Volumen de una esfera</h1>
+
+    <label for="radio">Radio:</label>
+    <input type="number" id="radio" step="any">
+    <button onclick="calcular()">Calcular volumen</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let radio = parseFloat(document.getElementById("radio").value);
+
+            let volumen = volumenEsfera(radio);
+
+            document.getElementById("resultado").innerHTML =
+            "El volumen de la esfera es: <strong>" + volumen.toFixed(2) + "</strong>";
+        }
+    </script>
+</body>
+</html>

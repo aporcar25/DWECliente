@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+    <h1>Simulación de 6000 tiradas</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let resultados = simularTiradas(6000);
+
+        let tabla = "<table border='1'>";
+        tabla += "<tr><th>Valor</th><th>Ocurrencias</th></tr>";
+
+        for (let i = 0; i < resultados.length; i++) {
+            tabla += "<tr><td>" + (i + 1) + "</td><td>" + resultados[i] + "</td></tr>";
+        }
+
+        tabla += "</table>";
+
+        document.getElementById("resultado").innerHTML = tabla;
+    </script>
+</body>
+</html>

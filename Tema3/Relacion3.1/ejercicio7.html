@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <script src="utils.js"></script>
+</head>
+
+<body>
+
+    <div id="resultado"></div>
+
+    <script>
+        let tabla = "<table border='1'>";
+        tabla += "<tr><th>Número</th><th>Factorial</th></tr>";
+
+        for (let i = 1; i <= 10; i++) {
+            tabla += "<tr><td>" + i + "</td><td>" + factorial(i) + "</td></tr>";
+        }
+
+        tabla += "</table>";
+
+        document.getElementById("resultado").innerHTML = tabla;
+    </script>
+</body>
+
+</html>

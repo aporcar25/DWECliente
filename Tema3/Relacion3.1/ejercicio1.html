@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+    <p id="resultado"></p>
+    
+    <script>
+            let n1 = parseFloat(prompt("Introduce el valor 1:"));
+            let n2 = parseFloat(prompt("Introduce el valor 2:"));
+            let n3 = parseFloat(prompt("Introduce el valor 3:"));
+            let n4 = parseFloat(prompt("Introduce el valor 4:"));
+
+            let resultado = maximo(n1, n2, n3, n4);
+
+            document.getElementById("resultado").innerHTML =
+            "El máximo es: " + resultado;
+    </script>
+</body>
+</html>
