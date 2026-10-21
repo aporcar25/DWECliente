@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    
+    <h1>Ejercicio 4: Operaciones entre arrays</h1>
+    <div id="resultado"></div>
+
+    <script>
+        const arrayA = ["casa", "perro", "gato", "mesa", "libro"];
+        const arrayB = ["gato", "libro", "silla", "coche", "sol"];
+
+        // Intersección
+        let interseccion = arrayA.filter(palabra => arrayB.includes(palabra));
+
+        // Unión
+        let union = [...new Set(arrayA.concat(arrayB))];
+
+        // Diferencia (A - B):
+        let diferencia = arrayA.filter(palabra => !arrayB.includes(palabra));
+
+        // Diferencia inversa (B - A):
+        let diferenciaInversa = arrayB.filter(palabra => !arrayA.includes(palabra));
+
+        document.getElementById("resultado").innerHTML =
+            "<p>Array A: " + arrayA.join(", ") + "</p>" +
+            "<p>Array B: " + arrayB.join(", ") + "</p>" +
+            "<hr>" +
+            "<p><strong>Intersección:</strong> " + interseccion.join(", ") + "</p>" +
+            "<p><strong>Unión:</strong> " + union.join(", ") + "</p>" +
+            "<p><strong>Diferencia (A - B):</strong> " + diferencia.join(", ") + "</p>" +
+            "<p><strong>Diferencia (B - A):</strong> " + diferenciaInversa.join(", ") + "</p>";
+    </script>
+</body>
+</html>

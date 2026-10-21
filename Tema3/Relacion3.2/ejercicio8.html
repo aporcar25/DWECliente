@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    
+    <h1>Ejercicio 8: Nombres ordenados</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let cadena = prompt("Introduce varios nombres separados por comas:\nEjemplo: Ana, Luis, Marta");
+
+        if (cadena === null || cadena.trim() === "") {
+            document.getElementById("resultado").innerHTML = "<p>No has introducido ningún nombre.</p>";
+        } else {
+            let nombresSinLimpiar = cadena.split(",");
+
+            let nombres = nombresSinLimpiar
+                .map(nombre => nombre.trim())
+                .filter(nombre => nombre !== "");
+
+            let ordenados = [...nombres].sort((a, b) => a.localeCompare(b, "es"));
+
+            document.getElementById("resultado").innerHTML =
+                "<p><strong>Cadena introducida:</strong> " + cadena + "</p>" +
+                "<p><strong>Nombres (" + nombres.length + "):</strong> " + nombres.join(", ") + "</p>" +
+                "<p><strong>Ordenados:</strong> " + ordenados.join(", ") + "</p>";
+        }
+    </script>
+</body>
+</html>
