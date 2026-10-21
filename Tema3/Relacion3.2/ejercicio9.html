@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+
+    <h1>Ejercicio 9: Análisis de una cadena</h1>
+    <button id="botonAnalizar">Introducir texto y analizar</button>
+
+    <script>
+        function analizarTexto() {
+            let texto = prompt("Introduce un texto:");
+
+            if (texto === null || texto.trim() === "") {
+                alert("No has introducido ningún texto.");
+                return;
+            }
+
+            let palabras = texto.trim().split(/\s+/);
+
+            let numeroPalabras = palabras.length;
+
+            let primera = palabras[0];
+            let ultima = palabras[palabras.length - 1];
+
+            let inversas = [...palabras].reverse();
+
+            let ordenAZ = [...palabras].sort((a, b) => a.localeCompare(b, "es"));
+            let ordenZA = [...palabras].sort((a, b) => b.localeCompare(a, "es"));
+
+            let ventana = window.open("", "_blank", "width=600,height=500");
+
+
+            ventana.document.write(
+                "<h1>Análisis del texto</h1>" +
+                "<p><strong>Texto original:</strong> " + texto + "</p>" +
+                "<p><strong>Número de palabras:</strong> " + numeroPalabras + "</p>" +
+                "<p><strong>Primera palabra:</strong> " + primera + "</p>" +
+                "<p><strong>Última palabra:</strong> " + ultima + "</p>" +
+                "<p><strong>Palabras en orden inverso:</strong> " + inversas.join(" ") + "</p>" +
+                "<p><strong>Ordenadas de la A a la Z:</strong> " + ordenAZ.join(" ") + "</p>" +
+                "<p><strong>Ordenadas de la Z a la A:</strong> " + ordenZA.join(" ") + "</p>"
+            );
+
+            ventana.document.close();
+        }
+
+        document.getElementById("botonAnalizar").addEventListener("click", analizarTexto);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    
+    <h1>Ejercicio 2: Buscar color en el array</h1>
+    <div id="resultado"></div>
+
+    <script>
+        const colores = ["azul", "amarillo", "rojo", "verde", "café", "rosa"];
+
+        let colorUsuario = prompt("Introduce un color:").trim().toLowerCase();
+        let encontrado = colores.includes(colorUsuario);
+
+        if (encontrado) {
+            document.getElementById("resultado").innerHTML = 
+                "<p>El color <strong>" + colorUsuario + "</strong> sí está en el array.</p>";
+        } else {
+            document.getElementById("resultado").innerHTML =
+                "<p>El color <strong>" + colorUsuario + "</strong> no está en el array.</p>";
+        }
+
+        document.getElementById("resultado").innerHTML +=
+            "<p>Colores del array: " + colores.join(", ") + "</p>";
+    </script>
+</body>
+</html>

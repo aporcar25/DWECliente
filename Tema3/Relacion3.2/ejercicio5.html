@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    
+    <h1>Ejercicio 5: Array aleatorio de 20 elementos</h1>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+        for (let i = 0; i < 20; i++) {
+            let numero = Math.floor(Math.random() * 101);
+            numeros.push(numero);
+        }
+
+        let minimo = Math.min(...numeros);
+        let maximo = Math.max(...numeros);
+
+        let suma = 0;
+        for (let i = 0; i < numeros.length; i++) {
+            suma += numeros[i];
+        }
+
+        let media = suma / numeros.length;
+
+        document.getElementById("resultado").innerHTML =
+            "<h2>Datos del array</h2>" +
+            "<p>" + numeros.join(", ") + "</p>" +
+            "<h2>Información</h2>" +
+            "<p>Valor mínimo: " + minimo + "</p>" +
+            "<p>Valor máximo: " + maximo + "</p>" +
+            "<p>Valor medio: " + media.toFixed(2) + "</p>";
+    </script>
+</body>
+</html>

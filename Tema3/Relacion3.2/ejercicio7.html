@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+    <h1>Ejercicio 7: Array ordenado sin duplicados</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let numeros = generarAleatorios(20, 100);
+        let sinDuplicados = eliminarDuplicados(numeros);
+        let ordenados = ordenarBurbuja(sinDuplicados);
+
+        document.getElementById("resultado").innerHTML =
+            "<h2>Sin ordenar (" + numeros.length + " valores)</h2>" +
+            "<p>" + numeros.join(", ") + "</p>" +
+            "<h2>Ordenados y sin duplicados (" + ordenados.length + " valores)</h2>" +
+            "<p>" + ordenados.join(", ") + "</p>";
+    </script>
+</body>
+</html>

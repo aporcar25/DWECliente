@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    
+    <h1>Ejercicio 3: 20 números aleatorios entre 0 y N</h1>
+    <div id="resultado"></div>
+
+    <script>
+        const numAleatorios = [];
+        let N = parseInt(prompt("Introduce el valor máximo N:"));
+
+        if (isNaN(N)) {
+            document.getElementById("resultado").innerHTML =
+            "<p>Error: debes introducir un número válido.</p>";
+        } else {
+            for (let i = 0; i < 20; i++) {
+                let numero = Math.floor(Math.random() * (N + 1));
+                numAleatorios.push(numero);
+            }
+
+            document.getElementById("resultado").innerHTML =
+                "<p>Valor máximo N: " + N + "</p>" +
+                "<p>Array generado (" + numAleatorios.length + " números):</p>" +
+                "<p>" + numAleatorios.join(", ") + "</p>";
+        }
+    </script>
+</body>
+</html>
