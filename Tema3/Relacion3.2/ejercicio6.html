@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    
+    <h1>Ejercicio 6: Buscar una palabra o caddena en la página</h1>
+
+    <div id="contenido">
+        <p>JavaScript es un lenguaje de programación que se ejecuta en el navegador y permite crear páginas web interactivas.</p>
+        <p>Los arrays son estructuras que almacenan varios valores en una sola variable, y se recorren con bucles.</p>
+        <p>Git es un sistema de control de versiones que permite trabajar en equipo usando ramas como main y develop.</p>
+        <p>El desarrollo web combina HTML para la estructura, CSS para el diseño y JavaScript para la lógica.</p>
+    </div>
+
+    <br>
+    <button id="botonBuscar">Buscar palabra</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        let boton = document.getElementById("botonBuscar");
+        let contenido = document.getElementById("contenido");
+        let resultado = document.getElementById("resultado");
+
+        function buscarTexto() {
+            let busqueda = prompt("Introduce la palabra o texto a buscar:");
+
+            if (busqueda === null) {
+                return;
+            }
+
+            let textoBuscado = busqueda.trim();
+
+            if (textoBuscado === "") {
+                resultado.innerHTML = "No has introducido ningún texto.";
+                return;
+            }
+
+            let textoDocumento = contenido.textContent.toLowerCase();
+            let existe = textoDocumento.includes(textoBuscado.toLowerCase());
+
+            if (existe) {
+                resultado.innerHTML = "El texto <strong>" + textoBuscado + "</strong> sí existe en el documento.";
+            } else {
+                resultado.innerHTML = "El texto <strong>" + textoBuscado + "</strong> no existe en el documento.";
+            }
+        }
+
+        boton.addEventListener("click", buscarTexto);
+    </script>
+</body>
+</html>
