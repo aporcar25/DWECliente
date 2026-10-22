@@ -30,3 +30,25 @@ function edadMedia() {
     }
     return suma / clase.length;
 }
+
+// EJERCICIO 4
+// Hacemos un azar que no se repita nadie hasta que hayan salido todos
+let pendientes = [];
+
+function alumnoAlAzar() {
+    if (clase.length === 0) {
+        return null;
+    }
+
+    if (pendientes.length === 0) {
+        for (let i = 0; i < clase.length; i++) {
+            pendientes.push(i);
+        }
+    }
+
+    let posicion = Math.floor(Math.random() * pendientes.length);
+
+    let indiceAlumno = pendientes.splice(posicion, 1)[0];
+
+    return clase[indiceAlumno].split(",")[0].trim();
+}
