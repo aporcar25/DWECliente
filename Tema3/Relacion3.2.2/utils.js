@@ -52,3 +52,28 @@ function alumnoAlAzar() {
 
     return clase[indiceAlumno].split(",")[0].trim();
 }
+
+// EJERCICIO 5
+function paresImpares() {
+    const arNumeros = [];
+
+    for (let i = 0; i < 100; i++) {
+        let numero = Math.floor(Math.random() * 1000) + 1;
+        arNumeros.push(numero);
+    }
+
+    let pares = [];
+    let impares = [];
+
+    for (let i = 0; i < arNumeros.length; i++) {
+        if (arNumeros[i] % 2 === 0) {
+            pares.push(arNumeros[i]);
+        } else {
+            impares.push(arNumeros[i]);
+        }
+    }
+
+    let organizado = pares.concat(impares);
+
+    return { arNumeros: arNumeros, organizado: organizado};
+}

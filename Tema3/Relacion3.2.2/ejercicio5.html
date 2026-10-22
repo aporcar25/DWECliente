@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 5: Pares e impares</h1>
+
+    <button id="botonGenerar">Generar 100 números</button>
+
+    <h2>Array original</h2>
+    <p id="original"></p>
+
+    <h2>Array organizado (primero pares, luego impares)</h2>
+    <p id="organizado"></p>
+
+    <script>
+        document.getElementById("botonGenerar").addEventListener("click", function () {
+            let resultado = paresImpares();
+
+            document.getElementById("original").textContent = resultado.arNumeros.join(", ");
+            document.getElementById("organizado").textContent = resultado.organizado.join(", ");
+        });
+    </script>
+</body>
+</html>
