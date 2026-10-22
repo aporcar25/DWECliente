@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script src="clase.js"></script>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+    <h1>Ejercicio 2: Nota de un estudiante</h1>
+
+    <label>Nº de estudiante:
+        <input type="number" id="numEstudiante" min="1" value="1">
+    </label>
+    <br><br>
+
+    <label>Trimestre:
+        <select id="trimestre">
+            <option value="">Sin indicar (nota media)</option>
+            <option value="1">1er trimestre</option>
+            <option value="2">2º trimestre</option>
+            <option value="3">3er trimestre</option>
+        </select>
+    </label>
+    <br><br>
+ 
+    <button id="botonNota">Consultar nota</button>
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById("botonNota").addEventListener("click", function () {
+            let num = Number(document.getElementById("numEstudiante").value);
+
+            let valorTrimestre = document.getElementById("trimestre").value;
+            let trimestre = valorTrimestre === "" ? undefined : Number(valorTrimestre);
+
+            let nota = obtenerNota(num, trimestre);
+
+            let resultado = document.getElementById("resultado");
+            if (nota === null) {
+                resultado.textContent = "Ese estudiante no existe (hay " + clase.length + " alumnos).";
+            } else if (trimestre === undefined) {
+                resultado.textContent = "Nota media: " + nota.toFixed(2);
+            } else {
+                resultado.textContent = "Nota del trimestre " + trimestre + ": " + nota;
+            }
+        });
+    </script>
+</body>
+</html>
