@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="clase.js"></script>
+    <script src="utils.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 4: Alumno al azar</h1>
+
+    <button id="botonAzar">Elegir alumno</button>
+
+    <h2 id="elegido"></h2>
+
+    <p>Han salido:</p>
+    <ol id="historial"></ol>
+
+    <script>
+        document.getElementById("botonAzar").addEventListener("click", function () {
+            let nombre = alumnoAlAzar();
+
+            if (nombre === null) {
+                document.getElementById("elegido").textContent = "La clase está vacía.";
+                return;
+            }
+
+            document.getElementById("elegido").textContent = nombre;
+
+            let item = document.createElement("li");
+            item.textContent = nombre;
+            document.getElementById("historial").appendChild(item);
+        });
+    </script>
+</body>
+</html>

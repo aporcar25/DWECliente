@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 9: Dos dados y tabla de combinaciones</h1>
+
+    <button id="botonSimular">Simular 36.000 lanzamientos</button>
+
+    <h2>Veces que sale cada suma</h2>
+    <table border="1">
+        <thead><tr><th>Suma</th><th>Veces</th></tr></thead>
+        <tbody id="tablaSumas"></tbody>
+    </table>
+
+    <h2>Combinaciones (filas: dado 1, columnas: dado 2)</h2>
+    <table border="1" id="tablaCombinaciones"></table>
+
+    <p id="total"></p>
+
+    <script>
+        document.getElementById("botonSimular").addEventListener("click", function () {
+            let resultado = simularDadosCombinaciones(36000);
+            let frecuencias = resultado.frecuencias;
+            let combinaciones = resultado.combinaciones;
+
+            // --- Tabla de sumas (de 2 a 12) ---
+            let filasSumas = "";
+            for (let suma = 2; suma <= 12; suma++) {
+                filasSumas += "<tr><td>" + suma + "</td><td>" + frecuencias[suma] + "</td></tr>";
+            }
+            document.getElementById("tablaSumas").innerHTML = filasSumas;
+
+            // --- Tabla bidimensional ---
+            let html = "<tr><th></th>";
+            for (let dado2 = 1; dado2 <= 6; dado2++) {
+                html += "<th>" + dado2 + "</th>";
+            }
+            html += "</tr>";
+
+            let total = 0;
+
+            // El bucle de fuera recorre las filas (dado 1), el de dentro las columnas (dado 2)
+            for (let dado1 = 1; dado1 <= 6; dado1++) {
+                html += "<tr><th>" + dado1 + "</th>";
+                for (let dado2 = 1; dado2 <= 6; dado2++) {
+                    html += "<td>" + combinaciones[dado1][dado2] + "</td>";
+                    total += combinaciones[dado1][dado2];
+                }
+                html += "</tr>";
+            }
+
+            document.getElementById("tablaCombinaciones").innerHTML = html;
+            document.getElementById("total").textContent = "Total de lanzamientos contados: " + total;
+        });
+    </script>
+</body>
+</html>
