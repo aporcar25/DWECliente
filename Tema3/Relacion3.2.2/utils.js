@@ -142,3 +142,23 @@ function simularDados(lanzamientos) {
     }
     return frecuencias;
 }
+
+// EJERCICIO 9
+function simularDadosCombinaciones(lanzamientos) {
+    let frecuencias = new Array(13).fill(0);
+
+    const combinaciones = [];
+
+    for (let i = 0; i < 7; i++) {
+        combinaciones.push(new Array(7).fill(0));
+    }
+
+    for (let i = 0; i < lanzamientos; i++) {
+        let dado1 = lanzarDado();
+        let dado2 = lanzarDado();
+
+        frecuencias[dado1 + dado2]++;
+        combinaciones[dado1][dado2]++;
+    }
+    return { frecuencias: frecuencias, combinaciones: combinaciones };
+}
