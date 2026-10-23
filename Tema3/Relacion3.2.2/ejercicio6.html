@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 6: Sueldo de vendedores</h1>
+    <p>Sueldo semanal = 200 + 9% de las ventas brutas.</p>
+
+    <!-- 1) Alta de vendedores -->
+    <h2>Dar de alta un vendedor</h2>
+    <input type="text" id="nombre" placeholder="Nombre del vendedor">
+    <button id="botonAlta">Dar de alta</button>
+
+    <!-- 2) Introducir ventas -->
+    <h2>Introducir ventas de la semana</h2>
+    <select id="selVendedor"></select>
+    <input type="number" id="ventas" min="0" step="0.01" placeholder="Ventas brutas">
+    <button id="botonVentas">Registrar ventas</button>
+
+    <p id="mensaje"></p>
+
+    <!-- 3) Resultado -->
+    <h2>Resultado</h2>
+    <table border="1">
+        <thead>
+            <tr><th>Vendedor</th><th>Ventas</th><th>Sueldo final</th></tr>
+        </thead>
+        <tbody id="cuerpoTabla"></tbody>
+    </table>
+
+    <script>
+        function mostrar() {
+            let select = document.getElementById("selVendedor");
+            let anterior = select.value;
+            select.innerHTML = "";
+
+            vendedores.forEach(function (v, i) {
+                select.appendChild(new Option(v.nombre, i));
+            });
+
+            if (anterior !== "") {
+                select.value = anterior;
+            }
+
+            // --- Tabla de resultados ---
+            let cuerpo = document.getElementById("cuerpoTabla");
+            cuerpo.innerHTML = "";
+
+            vendedores.forEach(function (v) {
+                let fila = document.createElement("tr");
+                let textos = [
+                    v.nombre,
+                    v.ventas.toFixed(2) + " $",
+                    calcularSueldo(v.ventas).toFixed(2) + " $"
+                ];
+
+                textos.forEach(function (texto) {
+                    let celda = document.createElement("td");
+                    celda.textContent = texto;
+                    fila.appendChild(celda);
+                });
+
+                cuerpo.appendChild(fila);
+            });
+        }
+
+        document.getElementById("botonAlta").addEventListener("click", function () {
+            let campoNombre = document.getElementById("nombre");
+            let mensaje = document.getElementById("mensaje");
+
+            if (altaVendedor(campoNombre.value)) {
+                mensaje.textContent = "Vendedor dado de alta.";
+                campoNombre.value = "";
+                mostrar();
+            } else {
+                mensaje.textContent = "Nombre vacío o vendedor ya existente.";
+            }
+        });
+
+        document.getElementById("botonVentas").addEventListener("click", function () {
+            let mensaje = document.getElementById("mensaje");
+            let valorVentas = document.getElementById("ventas").value;
+
+            let indice = document.getElementById("selVendedor").value === ""
+                ? -1
+                : Number(document.getElementById("selVendedor").value);
+            let ventas = valorVentas === "" ? NaN : Number(valorVentas);
+
+            if (registrarVentas(indice, ventas)) {
+                mensaje.textContent = "Ventas registradas.";
+                document.getElementById("ventas").value = "";
+                mostrar();
+            } else {
+                mensaje.textContent = "Elige un vendedor e introduce unas ventas válidas (número mayor o igual que 0).";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 7: Operaciones con un array</h1>
+
+    <button id="botonCero">a. Poner a cero</button>
+    <button id="botonSumar">b. Sumar 1</button>
+    <button id="botonReiniciar">Reiniciar valores</button>
+
+    <h2>Valores del array</h2>
+    <p id="valores"></p>
+
+
+    <script>
+        const arDatos = [4, 8, 15, 16, 23, 42, 7, 1, 9, 30];
+
+        let parrafo = document.getElementById("valores");
+
+        function mostrar() {
+            parrafo.textContent = valoresConEspacios(arDatos);
+        }
+
+        document.getElementById("botonCero").addEventListener("click", function () {
+            ponerACero(arDatos);
+            mostrar();
+        });
+
+        document.getElementById("botonSumar").addEventListener("click", function () {
+            sumarUno(arDatos);
+            mostrar();
+        });
+
+        document.getElementById("botonReiniciar").addEventListener("click", function () {
+            arDatos.splice(0, 10, 4, 8, 15, 16, 23, 42, 7, 1, 9, 30);
+            mostrar();
+        });
+
+        mostrar();
+    </script>
+</body>
+</html>

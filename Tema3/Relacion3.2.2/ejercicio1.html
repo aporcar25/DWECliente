@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src="clase.js"></script>
+</head>
+<body>
+
+    <h1>Ejercicio 1: Array clase</h1>
+
+    <table border="1" id="tabla"></table>
+
+    <script>
+        let tabla = document.getElementById("tabla");
+
+        let contenido = "<tr><th>Nombre</th><th>Edad</th><th>1ºTrimestre</th><th>2ºTrimestre</th><th>3ºTrimestre</th></tr>";
+
+        clase.forEach(function (alumno) {
+            let campos = alumno.split(",").map(campo => campo.trim());
+
+            contenido += "<tr>";
+            contenido += "<td>" + campos[0] + "</td>";
+            contenido += "<td>" + campos[1] + "</td>";
+            contenido += "<td>" + campos[2] + "</td>";
+            contenido += "<td>" + campos[3] + "</td>";
+            contenido += "<td>" + campos[4] + "</td>";
+            contenido += "</tr>";
+        });
+
+        tabla.innerHTML = contenido;
+
+        console.log(clase[0]);
+    </script>
+</body>
+</html>

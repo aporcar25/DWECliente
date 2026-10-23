@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script src="clase.js"></script>
+    <script src="utils.js"></script>
+</head>
+<body>
+    
+    <h1>Ejercicio 3: Edad media de la clase</h1>
+
+    <button id="botonMedia">Calcular edad media</button>
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById("botonMedia").addEventListener("click", function () {
+            let media = edadMedia();
+
+            let resultado = document.getElementById("resultado");
+            if (media === null) {
+                resultado.textContent = "La clase está vacía.";
+            } else {
+                resultado.textContent = "La edad media de la clase es " + media.toFixed(1) + " años.";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 10: Reserva de asientos</h1>
+
+    <p>Tipo de asiento:
+        <select id="tipo">
+            <option value="First">First (asientos 1 al 5)</option>
+            <option value="Turista">Turista (asientos 6 al 10)</option>
+        </select>
+    </p>
+
+    <p>Asiento libre:
+        <select id="asiento"></select>
+    </p>
+
+    <p>
+        <input type="text" id="pasajero" placeholder="Nombre del pasajero">
+        <button id="botonReservar">Reservar</button>
+        <button id="botonTarjeta">Imprimir tarjeta de embarque</button>
+    </p>
+
+    <p id="mensaje"></p>
+
+    <h2>Estado del avión</h2>
+    <table border="1" id="tabla"></table>
+
+    <script>
+        const selTipo = document.getElementById("tipo");
+        const selAsiento = document.getElementById("asiento");
+        const mensaje = document.getElementById("mensaje");
+
+        let ultimoReservado = 0;
+
+        function mostrarLibres() {
+            const libres = asientosLibres(selTipo.value);
+
+            let opciones = "";
+            for (let i = 0; i < libres.length; i++) {
+                opciones += "<option value='" + libres[i] + "'>Asiento " + libres[i] + "</option>";
+            }
+            selAsiento.innerHTML = opciones;
+
+            if (libres.length === 0) {
+                mensaje.textContent = "No quedan asientos libres en " + selTipo.value;
+            }
+        }
+
+        function mostrarTabla() {
+            let filas = "<tr><th>Asiento</th><th>Clase</th><th>Pasajero</th></tr>";
+
+            for (let i = 0; i < asientos.length; i++) {
+                let pasajero = asientos[i];
+
+                if (pasajero === null) {
+                    pasajero = "Libre";
+                }
+
+                filas += "<tr>";
+                filas += "<td>" + (i + 1) + "</td>";
+                filas += "<td>" + claseAsiento(i + 1) + "</td>";
+                filas += "<td>" + pasajero + "</td>";
+                filas += "</tr>";
+            }
+
+            document.getElementById("tabla").innerHTML = filas;
+        }
+
+        selTipo.addEventListener("change", function () {
+            mensaje.textContent = "";
+            mostrarLibres();
+        });
+
+        document.getElementById("botonReservar").addEventListener("click", function () {
+            const numero = Number(selAsiento.value);
+            const nombre = document.getElementById("pasajero").value;
+
+            if (reservarAsiento(numero, nombre)) {
+                ultimoReservado = numero;
+                mensaje.textContent = "Asiento " + numero + " reservado.";
+                document.getElementById("pasajero").value = "";
+                mostrarLibres();
+                mostrarTabla();
+            } else {
+                mensaje.textContent = "Elige un asiento libre y escribe el nombre.";
+            }
+        });
+
+        document.getElementById("botonTarjeta").addEventListener("click", function () {
+            if (ultimoReservado === 0) {
+                mensaje.textContent = "Primero reserva un asiento.";
+                return;
+            }
+
+            const ventana = window.open("", "_blank", "width=350,height=300");
+            ventana.document.write(tarjetaEmbarque(ultimoReservado));
+            ventana.document.close();
+        });
+
+        mostrarLibres();
+        mostrarTabla();
+    </script>
+</body>
+</html>
