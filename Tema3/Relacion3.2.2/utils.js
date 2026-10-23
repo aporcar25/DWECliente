@@ -162,3 +162,52 @@ function simularDadosCombinaciones(lanzamientos) {
     }
     return { frecuencias: frecuencias, combinaciones: combinaciones };
 }
+
+// EJERCICIO 10
+const asientos = [null, null, null, null, null, null, null, null, null, null];
+
+function claseAsiento(numero) {
+    if (numero <= 5) {
+        return "First";
+    } else {
+        return "Turista";
+    }
+}
+
+function asientosLibres(tipo) {
+    const libres = [];
+
+    for (let numero = 1; numero <= 10; numero++) {
+        if (asientos[numero - 1] === null && claseAsiento(numero) === tipo) {
+            libres.push(numero);
+        }
+    }
+    return libres;
+}
+
+function reservarAsiento(numero, pasajero) {
+    pasajero = pasajero.trim();
+
+    if (pasajero === "") {
+        return false;
+    }
+
+    if (numero < 1 || numero > 10) {
+        return false;
+    }
+
+    if (asientos[numero - 1] !== null) {
+        return false;
+    }
+
+    asientos[numero - 1] = pasajero;
+    return true;
+}
+
+function tarjetaEmbarque(numero) {
+    let texto = "<h1>Tarjeta de embarque</h1>";
+    texto += "<p>Pasajero: " + asientos[numero - 1] + "</p>";
+    texto += "<p>Asiento: " + numero + "</p>";
+    texto += "<p>Clase: " + claseAsiento(numero) + "</p>";
+    return texto;
+}
