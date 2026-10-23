@@ -77,3 +77,36 @@ function paresImpares() {
 
     return { arNumeros: arNumeros, organizado: organizado};
 }
+
+// EJERCICIO 6
+const vendedores = [];
+
+function altaVendedor(nombre) {
+    nombre = nombre.trim();
+
+    if (nombre === "") {
+        return false;
+    }
+
+    for (let i = 0; i < vendedores.length; i++) {
+        if (vendedores[i].nombre.toLowerCase() === nombre.toLowerCase()) {
+            return false;
+        }
+    }
+
+    vendedores.push({ nombre: nombre, ventas: 0});
+    return true;
+}
+
+function registrarVentas(indice, ventas) {
+    if (indice < 0 || indice >= vendedores.length || Number.isNaN(ventas) || ventas < 0) {
+        return false;
+    }
+
+    vendedores[indice].ventas = ventas;
+    return true;
+}
+
+function calcularSueldo(ventas) {
+    return 200 + ventas * 0.09;
+}
