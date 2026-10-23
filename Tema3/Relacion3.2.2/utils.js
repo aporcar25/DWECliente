@@ -127,3 +127,18 @@ function sumarUno(array) {
 function valoresConEspacios(array) {
     return array.join(" ");
 }
+
+// EJERCICIO 8
+function lanzarDado() {
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+function simularDados(lanzamientos) {
+    let frecuencias = new Array(13).fill(0);
+
+    for (let i = 0; i < lanzamientos; i++) {
+        let suma = lanzarDado() + lanzarDado();
+        frecuencias[suma]++;
+    }
+    return frecuencias;
+}

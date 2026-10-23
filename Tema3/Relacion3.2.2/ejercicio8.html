@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 8: Lanzamiento de dos dados</h1>
+
+    <button id="botonSimular">Simular 36.000 lanzamientos</button>
+
+    <table border="1">
+        <thead>
+            <tr><th>Suma</th><th>Veces</th></tr>
+        </thead>
+        <tbody id="cuerpoTabla"></tbody>
+    </table>
+
+    <p id="total"></p>
+
+    <script>
+        let lanzamientos = 36000;
+
+        document.getElementById("botonSimular").addEventListener("click", function () {
+            const frecuencias = simularDados(lanzamientos);
+
+            let filas = "";
+            let total = 0;
+
+            for (let suma = 2; suma <= 12; suma++) {
+                let combinaciones = 6 - Math.abs(7 - suma);
+
+                filas += "<tr><td>" + suma + "</td><td>" + frecuencias[suma] + "</td></tr>";
+
+                total += frecuencias[suma];
+            }
+
+            document.getElementById("cuerpoTabla").innerHTML = filas;
+            document.getElementById("total").textContent = "Total de lanzamientos contados: " + total;
+        });
+    </script>
+</body>
+</html>
