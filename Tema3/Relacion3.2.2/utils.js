@@ -110,3 +110,20 @@ function registrarVentas(indice, ventas) {
 function calcularSueldo(ventas) {
     return 200 + ventas * 0.09;
 }
+
+// EJERCICIO 7
+function ponerACero (array) {
+    for (let i = 0; i < array.length; i++) {
+        array[i] = 0;
+    }
+}
+
+function sumarUno(array) {
+    for (let i = 0; i < array.length; i++) {
+        array[i] = array[i] + 1;
+    }
+}
+
+function valoresConEspacios(array) {
+    return array.join(" ");
+}
