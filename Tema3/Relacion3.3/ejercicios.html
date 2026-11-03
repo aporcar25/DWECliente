@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/modAuxiliar.js"></script>
+</head>
+
+<body>
+    <h2>1. filterNumbersGreaterThan</h2>
+    <p id="resultado1"></p>
+    <script>
+        let numFiltrados = filterNumbersGreaterThan([3, 8, 12, 1, 7, 4], 7);
+        document.getElementById("resultado1").innerHTML = "Resultado: " + numFiltrados;
+    </script>
+
+    <h2>2. toHackerSpeak</h2>
+    <p id="resultado2"></p>
+    <script>
+        let textoHacker = toHackerSpeak("I'm a hacker now");
+        document.getElementById("resultado2").innerHTML = "Resultado: " + textoHacker;
+    </script>
+
+    <h2>3. getFileExtension</h2>
+    <p id="resultado3"></p>
+    <script>
+        let extension = getFileExtension("imagen.jpg");
+        document.getElementById("resultado3").innerHTML = "Resultado: " + extension;
+    </script>
+
+    <h2>4. flatArray</h2>
+    <p id="resultado4"></p>
+    <script>
+        let aplanado = flatArray([[1, 5, 4], [3, 10], [2, 5]]);
+        document.getElementById("resultado4").innerHTML = "Resultado: " + aplanado;
+    </script>
+
+    <h2>5. removeDuplicates</h2>
+    <p id="resultado5"></p>
+    <script>
+        let sinDuplicados = removeDuplicates([4, 5, 10, 4, 10, 2]);
+        document.getElementById("resultado5").innerHTML = "Resultado: " + sinDuplicados;
+    </script>
+
+    <h2>6. countLetter</h2>
+    <p id="resultado6"></p>
+    <script>
+        let veces = countLetter("a", "javascript");
+        document.getElementById("resultado6").innerHTML = "Resultado: " + veces;
+    </script>
+
+    <h2>7. removeWords</h2>
+    <p id="resultado7"></p>
+    <script>
+        let textoLimpio = removeWords("This is a really bad test", ["really", "bad"]);
+        document.getElementById("resultado7").innerHTML = "Resultado: " + textoLimpio;
+    </script>
+</body>
+</html>

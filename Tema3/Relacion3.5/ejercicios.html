@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="FuncionesArrow.js"></script>
+</head>
+<body>
+    <h1>Funciones Arrow</h1>
+    <p>Abre la consola para ver los console.log</p>
+
+    <h2>Ejercicio 1</h2>
+    <p id="ejercicio1"></p>
+    <button id="boton">Mostrar</button>
+
+    <h2>Ejercicio 2</h2>
+    <p id="ejercicio2"></p>
+
+    <h2>Ejercicio 3</h2>
+    <p id="ejercicio3"></p>
+
+    <h2>Ejercicio 4</h2>
+    <p id="ejercicio4"></p>
+
+    <h2>Ejercicio 5</h2>
+    <p id="ejercicio5"></p>
+
+    <script>
+        // Ejercicio 1
+        document.getElementById("ejercicio1").innerHTML =
+            "sum(40, 2) = " + sum(40, 2) + "<br>" +
+            "sum(42, 0) = " + sum(42, 0);
+
+        stringLength(longestCityNameInTheWorld);
+        stringLength2("willynilly");
+
+        document.getElementById("boton").addEventListener("click", () => {
+            showAlert("you ball of fluff");
+        });
+
+        // Ejercicio 2
+        document.getElementById("ejercicio2").textContent = presentarse("Antonio", 19);
+
+        // Ejercicio 3
+        document.getElementById("ejercicio3").textContent =
+            "La suma de [1, 2, 3, 4, 5] es " + sumarArray([1, 2, 3, 4, 5]);
+
+        // Ejercicio 4
+        document.getElementById("ejercicio4").textContent = "fire() devuelve: " + fire();
+
+        // Ejercicio 5
+        document.getElementById("ejercicio5").textContent = "fibonacci(10) = " + fibonacci(10);
+    </script>
+</body>
+</html>
